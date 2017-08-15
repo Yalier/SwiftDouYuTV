@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6PN-XR-luT">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ijf-YW-5Xx">
+            <objects>
+                <viewController id="2ph-2g-dhi" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ppw-uo-sgH"/>
+                        <viewControllerLayoutGuide type="bottom" id="KcZ-ZM-ktB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZQY-9M-ucB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NH2-je-5oL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qKU-fm-p4V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="214"/>
+        </scene>
+        <!--直播-->
+        <scene sceneID="K1m-ru-UOF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6PN-XR-luT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="直播" image="直播 (1)" selectedImage="直播" id="hJ1-O3-LIR"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YMa-ND-QKH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2ph-2g-dhi" kind="relationship" relationship="rootViewController" id="rjo-8e-HPm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fgg-zR-mxc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="330.39999999999998" y="213.64317841079463"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="直播" width="16" height="16"/>
+        <image name="直播 (1)" width="16" height="16"/>
+    </resources>
+</document>

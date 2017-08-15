@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OTl-rv-W4m">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="k4h-QJ-K3N">
+            <objects>
+                <viewController id="5ki-ya-AVI" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d14-ki-Njq"/>
+                        <viewControllerLayoutGuide type="bottom" id="uK1-rJ-tED"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3wk-GO-ibV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mtA-Al-t8l"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPo-Uu-Ihk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="1003"/>
+        </scene>
+        <!--关注-->
+        <scene sceneID="egW-CS-uDZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OTl-rv-W4m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="关注" image="关注 (1)" selectedImage="关注" id="n6p-06-kl5"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4_7.fullscreen"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="doL-s5-AdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5ki-ya-AVI" kind="relationship" relationship="rootViewController" id="G86-Ia-onc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H3j-Y1-7IR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="1004"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="关注" width="16" height="16"/>
+        <image name="关注 (1)" width="16" height="16"/>
+    </resources>
+</document>
