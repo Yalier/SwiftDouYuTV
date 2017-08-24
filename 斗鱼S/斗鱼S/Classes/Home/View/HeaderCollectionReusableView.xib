@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SdJ-Ng-gko">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="10"/>
+                    <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="VzE-41-DsH"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="columnHotIcon" translatesAutoresizingMaskIntoConstraints="NO" id="O4J-Rt-rhd">
+                    <rect key="frame" x="10" y="22" width="18" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="KzX-ug-51y"/>
+                        <constraint firstAttribute="width" constant="18" id="aKU-VN-fQf"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="颜值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ei-jb-pod">
+                    <rect key="frame" x="33" y="22" width="31" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mot-PL-HF3">
+                    <rect key="frame" x="250" y="15" width="60" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="qgv-2f-S4N"/>
+                    </constraints>
+                    <state key="normal" title="更多 &gt;">
+                        <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="mot-PL-HF3" secondAttribute="trailing" constant="10" id="AoO-88-VyN"/>
+                <constraint firstAttribute="bottom" secondItem="mot-PL-HF3" secondAttribute="bottom" constant="5" id="LFF-Fa-GAd"/>
+                <constraint firstItem="SdJ-Ng-gko" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="LR0-22-0Qg"/>
+                <constraint firstItem="7Ei-jb-pod" firstAttribute="leading" secondItem="O4J-Rt-rhd" secondAttribute="trailing" constant="5" id="Nuk-i0-qlu"/>
+                <constraint firstItem="mot-PL-HF3" firstAttribute="top" secondItem="SdJ-Ng-gko" secondAttribute="bottom" constant="5" id="W67-VL-NAM"/>
+                <constraint firstItem="O4J-Rt-rhd" firstAttribute="top" secondItem="SdJ-Ng-gko" secondAttribute="bottom" constant="12" id="aMs-Go-E5h"/>
+                <constraint firstAttribute="trailing" secondItem="SdJ-Ng-gko" secondAttribute="trailing" id="aSM-Aa-dDA"/>
+                <constraint firstItem="O4J-Rt-rhd" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" constant="10" id="dGw-ez-6iC"/>
+                <constraint firstItem="SdJ-Ng-gko" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="dRA-s0-INY"/>
+                <constraint firstItem="7Ei-jb-pod" firstAttribute="centerY" secondItem="O4J-Rt-rhd" secondAttribute="centerY" id="q7q-MR-w83"/>
+            </constraints>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="columnHotIcon" width="20" height="20"/>
+    </resources>
+</document>
