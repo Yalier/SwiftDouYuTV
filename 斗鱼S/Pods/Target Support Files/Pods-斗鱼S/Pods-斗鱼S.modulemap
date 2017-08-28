@@ -1,0 +1,6 @@
+framework module Pods___S {
+  umbrella header "Pods-斗鱼S-umbrella.h"
+
+  export *
+  module * { export * }
+}

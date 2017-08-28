@@ -11,7 +11,7 @@ import UIKit
 protocol pageTitleViewDelegate: class
 {
     
-    func pageTitleView(titleView:PageTitleView, selected index:Int)
+    func pageTitleView(_ titleView:PageTitleView, selected index:Int)
     
 }
 
@@ -148,7 +148,7 @@ extension PageTitleView
             
             //给label添加手势
             myLabel.isUserInteractionEnabled = true
-            let tapGes = UITapGestureRecognizer.init(target: self, action: #selector(self.titleClicked(tapGes:)))
+            let tapGes = UITapGestureRecognizer.init(target: self, action: #selector(titleClicked(_:)))
             myLabel.addGestureRecognizer(tapGes)
             
         }
@@ -162,7 +162,7 @@ extension PageTitleView
 extension PageTitleView
 {
     
-    @objc func titleClicked(tapGes:UITapGestureRecognizer)
+    @objc func titleClicked(_ tapGes:UITapGestureRecognizer)
     {
         
         guard let currentLabel = tapGes.view as? UILabel else {return}
@@ -182,7 +182,7 @@ extension PageTitleView
         }
         
         //通知代理做事情
-        delegate?.pageTitleView(titleView: self, selected: currentLabel.tag)
+        delegate?.pageTitleView(self, selected: currentLabel.tag)
         
     }
     
@@ -193,7 +193,7 @@ extension PageTitleView
 extension PageTitleView
 {
     
-    func setTitleView(progress:CGFloat, sourceIndex:Int, targetIndex:Int)
+    func setTitleView(_ progress:CGFloat, sourceIndex:Int, targetIndex:Int)
     {
     
         oldIndex = targetIndex

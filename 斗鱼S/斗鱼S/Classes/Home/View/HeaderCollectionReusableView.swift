@@ -9,10 +9,30 @@
 import UIKit
 
 class HeaderCollectionReusableView: UICollectionReusableView {
-
-    override func awakeFromNib() {
+    
+    @IBOutlet weak var iconIV: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    var group : AnchorGroup?
+    {
+        didSet
+        {
+            
+            iconIV.image = UIImage.init(named: group?.icon_name ?? "discovery_wolfmanKill")
+            titleLabel.text = group?.tag_name
+            
+        }
+        
+    }
+    
+    
+    
+    override func awakeFromNib()
+    {
+       
         super.awakeFromNib()
-        // Initialization code
+        
     }
     
 }

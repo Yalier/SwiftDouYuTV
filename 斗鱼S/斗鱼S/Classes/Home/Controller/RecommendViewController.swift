@@ -20,6 +20,9 @@ let kHeaderID = "kHeaderID"
 class RecommendViewController: UIViewController
 {
 
+    
+    lazy var recommendVM: RecommendViewModel = RecommendViewModel()
+    
     lazy var collectionView: UICollectionView =
     {[unowned self] in
        
@@ -47,7 +50,12 @@ class RecommendViewController: UIViewController
         
         view.backgroundColor = UIColor.cyan
         
+        //添加子控件
         setUPUI()
+        
+        
+        //网络请求
+        loadData()
     
         
         collectionView.register(UINib.init(nibName: "NormalCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
@@ -70,6 +78,23 @@ class RecommendViewController: UIViewController
 
 }
 
+//MARK:- 网络请求
+extension RecommendViewController
+{
+    
+    func loadData()
+    {
+     
+        recommendVM.requestData { 
+            
+            self.collectionView.reloadData()
+        }
+    }
+    
+    
+}
+
+//MARK:- 添加子控件
 extension RecommendViewController
 {
     
@@ -89,19 +114,17 @@ extension RecommendViewController: UICollectionViewDataSource, UICollectionViewD
     func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         
-        return 12
+        return recommendVM.groupArray.count
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         
-        if section == 0
-        {
-            return 8
-        }
         
-        return 4
+        let groupCount = recommendVM.groupArray[section]
+        return groupCount.roomModelArray.count
+        
         
     }
     
@@ -127,8 +150,9 @@ extension RecommendViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     {
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderID, for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderID, for: indexPath) as! HeaderCollectionReusableView
         
+        headerView.group = recommendVM.groupArray[indexPath.section]
         
         return headerView
         

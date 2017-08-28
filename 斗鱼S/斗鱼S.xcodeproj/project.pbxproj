@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2F269D1F5007A9003E03EC /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F269C1F5007A9003E03EC /* NetworkTools.swift */; };
+		0E2F26A01F50130D003E03EC /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F269F1F50130D003E03EC /* RecommendViewModel.swift */; };
+		0E2F26A21F50193A003E03EC /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F26A11F50193A003E03EC /* NSDateExtension.swift */; };
+		0E2F26A41F502198003E03EC /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F26A31F502198003E03EC /* AnchorGroup.swift */; };
+		0E2F26A61F502869003E03EC /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2F26A51F502869003E03EC /* RoomModel.swift */; };
 		0E3E56691F42E39600C2E88B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3E56681F42E39600C2E88B /* AppDelegate.swift */; };
 		0E3E566E1F42E39600C2E88B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3E566C1F42E39600C2E88B /* Main.storyboard */; };
 		0E3E56701F42E39600C2E88B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3E566F1F42E39600C2E88B /* Assets.xcassets */; };
@@ -29,9 +34,15 @@
 		0E9C43431F4D5B2A00D83A2C /* NormalCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9C43411F4D5B2A00D83A2C /* NormalCollectionViewCell.xib */; };
 		0E9C43461F4D694500D83A2C /* PrettyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9C43441F4D694500D83A2C /* PrettyCollectionViewCell.swift */; };
 		0E9C43471F4D694500D83A2C /* PrettyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9C43451F4D694500D83A2C /* PrettyCollectionViewCell.xib */; };
+		D45924DB1DA125DB5875FD95 /* Pods___S.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EE7025C889F21B6440348A /* Pods___S.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E2F269C1F5007A9003E03EC /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
+		0E2F269F1F50130D003E03EC /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		0E2F26A11F50193A003E03EC /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		0E2F26A31F502198003E03EC /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
+		0E2F26A51F502869003E03EC /* RoomModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		0E3E56651F42E39600C2E88B /* 斗鱼S.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "斗鱼S.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E3E56681F42E39600C2E88B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E3E566D1F42E39600C2E88B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,6 +67,9 @@
 		0E9C43411F4D5B2A00D83A2C /* NormalCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E9C43441F4D694500D83A2C /* PrettyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrettyCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E9C43451F4D694500D83A2C /* PrettyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrettyCollectionViewCell.xib; sourceTree = "<group>"; };
+		95EE7025C889F21B6440348A /* Pods___S.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___S.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C2DEC6CC081975CC5E309E5 /* Pods-斗鱼S.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-斗鱼S.debug.xcconfig"; path = "Pods/Target Support Files/Pods-斗鱼S/Pods-斗鱼S.debug.xcconfig"; sourceTree = "<group>"; };
+		E7E779BCC02DF3270A7E720C /* Pods-斗鱼S.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-斗鱼S.release.xcconfig"; path = "Pods/Target Support Files/Pods-斗鱼S/Pods-斗鱼S.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,17 +77,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45924DB1DA125DB5875FD95 /* Pods___S.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E2F269E1F5012BE003E03EC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0E2F269F1F50130D003E03EC /* RecommendViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0E3E565C1F42E39600C2E88B = {
 			isa = PBXGroup;
 			children = (
 				0E3E56671F42E39600C2E88B /* 斗鱼S */,
 				0E3E56661F42E39600C2E88B /* Products */,
+				A7FE7E477BB4D705EE6829F7 /* Pods */,
+				7C523E5057DEF54B6E2B59F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +147,7 @@
 		0E3E567C1F42EA3600C2E88B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0E2F269E1F5012BE003E03EC /* ViewModel */,
 				0E5409B31F453AC4006611A9 /* Model */,
 				0E5409B41F453AC4006611A9 /* View */,
 				0E5409B21F453AC4006611A9 /* Controller */,
@@ -161,6 +187,7 @@
 			children = (
 				0E5409BC1F45519E006611A9 /* Extension */,
 				0E5409C11F457077006611A9 /* Common.swift */,
+				0E2F269C1F5007A9003E03EC /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -209,6 +236,8 @@
 		0E5409B71F453B94006611A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E2F26A31F502198003E03EC /* AnchorGroup.swift */,
+				0E2F26A51F502869003E03EC /* RoomModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,8 +260,26 @@
 			children = (
 				0E5409BD1F45530D006611A9 /* UIBarButtonItem-Extension.swift */,
 				0E5437141F4A8B21001C619C /* UIColor-Extension.swift */,
+				0E2F26A11F50193A003E03EC /* NSDateExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		7C523E5057DEF54B6E2B59F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95EE7025C889F21B6440348A /* Pods___S.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7FE7E477BB4D705EE6829F7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C2DEC6CC081975CC5E309E5 /* Pods-斗鱼S.debug.xcconfig */,
+				E7E779BCC02DF3270A7E720C /* Pods-斗鱼S.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,9 +289,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E3E56771F42E39600C2E88B /* Build configuration list for PBXNativeTarget "斗鱼S" */;
 			buildPhases = (
+				E44A8C6160391439E4CAB567 /* [CP] Check Pods Manifest.lock */,
 				0E3E56611F42E39600C2E88B /* Sources */,
 				0E3E56621F42E39600C2E88B /* Frameworks */,
 				0E3E56631F42E39600C2E88B /* Resources */,
+				ADB7B9B042EF5736E9030DAC /* [CP] Embed Pods Frameworks */,
+				E3FB75CC18B5C37D75023E9F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -268,6 +318,7 @@
 					0E3E56641F42E39600C2E88B = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = V9KQJBLZ9J;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -310,23 +361,76 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		ADB7B9B042EF5736E9030DAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-斗鱼S/Pods-斗鱼S-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E3FB75CC18B5C37D75023E9F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-斗鱼S/Pods-斗鱼S-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E44A8C6160391439E4CAB567 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0E3E56611F42E39600C2E88B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0E9C43461F4D694500D83A2C /* PrettyCollectionViewCell.swift in Sources */,
+				0E2F26A61F502869003E03EC /* RoomModel.swift in Sources */,
 				0E3E56691F42E39600C2E88B /* AppDelegate.swift in Sources */,
 				0E5437151F4A8B21001C619C /* UIColor-Extension.swift in Sources */,
 				0E9C433B1F4D237100D83A2C /* RecommendViewController.swift in Sources */,
+				0E2F26A41F502198003E03EC /* AnchorGroup.swift in Sources */,
 				0E5409B91F453B94006611A9 /* MainViewController.swift in Sources */,
 				0E5409C01F456CD3006611A9 /* PageTitleView.swift in Sources */,
+				0E2F26A21F50193A003E03EC /* NSDateExtension.swift in Sources */,
 				0E5437111F4A82EA001C619C /* PageContentView.swift in Sources */,
 				0E5409BE1F45530D006611A9 /* UIBarButtonItem-Extension.swift in Sources */,
 				0E5409C21F457077006611A9 /* Common.swift in Sources */,
 				0E9C43421F4D5B2A00D83A2C /* NormalCollectionViewCell.swift in Sources */,
 				0E9C433E1F4D520F00D83A2C /* HeaderCollectionReusableView.swift in Sources */,
+				0E2F269D1F5007A9003E03EC /* NetworkTools.swift in Sources */,
 				0E5409BB1F453C17006611A9 /* HomeViewController.swift in Sources */,
+				0E2F26A01F50130D003E03EC /* RecommendViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +572,7 @@
 		};
 		0E3E56781F42E39600C2E88B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C2DEC6CC081975CC5E309E5 /* Pods-斗鱼S.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -484,6 +589,7 @@
 		};
 		0E3E56791F42E39600C2E88B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7E779BCC02DF3270A7E720C /* Pods-斗鱼S.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

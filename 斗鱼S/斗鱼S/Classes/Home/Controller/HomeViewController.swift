@@ -126,9 +126,9 @@ extension HomeViewController
 extension HomeViewController: pageTitleViewDelegate
 {
     
-    func pageTitleView(titleView: PageTitleView, selected index: Int) {
+    func pageTitleView(_ titleView: PageTitleView, selected index: Int) {
         
-        pageContenViewL.setCurrIndex(currentInt: index)
+        pageContenViewL.setCurrIndex(index)
         
     }
     
@@ -138,10 +138,10 @@ extension HomeViewController: pageTitleViewDelegate
 extension HomeViewController: pageContentViewDelegate
 {
     
-    func pageContentDelegate(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int)
+    func pageContentDelegate(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int)
     {
         
-        pageTitleViewL.setTitleView(progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+        pageTitleViewL.setTitleView(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
         
     }
     

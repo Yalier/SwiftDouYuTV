@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="HeaderCollectionReusableView" customModule="斗鱼S" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
@@ -58,6 +58,10 @@
                 <constraint firstItem="SdJ-Ng-gko" firstAttribute="leading" secondItem="U6b-Vx-4bR" secondAttribute="leading" id="dRA-s0-INY"/>
                 <constraint firstItem="7Ei-jb-pod" firstAttribute="centerY" secondItem="O4J-Rt-rhd" secondAttribute="centerY" id="q7q-MR-w83"/>
             </constraints>
+            <connections>
+                <outlet property="iconIV" destination="O4J-Rt-rhd" id="Vts-7r-c1k"/>
+                <outlet property="titleLabel" destination="7Ei-jb-pod" id="g9c-jx-nZ8"/>
+            </connections>
         </collectionReusableView>
     </objects>
     <resources>

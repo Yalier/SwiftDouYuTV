@@ -13,7 +13,7 @@ private let cellID = "CellID"
 protocol pageContentViewDelegate: class
 {
     
-    func pageContentDelegate(contentView:PageContentView, progress:CGFloat, sourceIndex:Int, targetIndex:Int)
+    func pageContentDelegate(_ contentView:PageContentView, progress:CGFloat, sourceIndex:Int, targetIndex:Int)
     
 }
 
@@ -200,7 +200,7 @@ extension PageContentView: UICollectionViewDelegate
         }
         
         //将progress sourceIndex targetIndex 传递给pageTitleView
-        delegate?.pageContentDelegate(contentView: self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
+        delegate?.pageContentDelegate(self, progress: progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
         
         
     }
@@ -212,7 +212,7 @@ extension PageContentView: UICollectionViewDelegate
 //MARK:- 对外暴露的方法
 extension PageContentView
 {
-    func setCurrIndex(currentInt:Int)
+    func setCurrIndex(_ currentInt:Int)
     {
         
         
