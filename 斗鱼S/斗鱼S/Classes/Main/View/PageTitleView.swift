@@ -166,6 +166,13 @@ extension PageTitleView
     {
         
         guard let currentLabel = tapGes.view as? UILabel else {return}
+        
+        if currentLabel.tag == oldIndex
+        {
+            return
+        }
+        
+        
         let oldLabel = labels[oldIndex]
         
         currentLabel.textColor = UIColor.init(r: kSelectedColor.0, g: kSelectedColor.1, b: kSelectedColor.2)

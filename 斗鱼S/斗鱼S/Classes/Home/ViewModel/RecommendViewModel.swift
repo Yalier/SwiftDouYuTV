@@ -11,11 +11,13 @@ import UIKit
 class RecommendViewModel: NSObject
 {
     
+    lazy var cycleModels:[CycleModel] = [CycleModel]()
     lazy var groupArray:[AnchorGroup] = [AnchorGroup]()
     lazy var recommendData: AnchorGroup = AnchorGroup()
     lazy var prottyData : AnchorGroup = AnchorGroup()
     
     
+    //请求首页推荐数据
     func requestData(callBack:@escaping () -> ())
     {
       
@@ -33,7 +35,8 @@ class RecommendViewModel: NSObject
             
             
             self.recommendData.tag_name = "热门"
-            self.recommendData.icon_name = "columnHotIcon"
+            self.recommendData.small_icon_url = "columnHotIcon"
+            
             
             for dic in dataArr
             {
@@ -51,7 +54,7 @@ class RecommendViewModel: NSObject
         
         
         
-      //http://capi.douyucdn.cn/api/v1/getVerticalRoom?limit=4&offset=0&time=1503906640
+      //http://capi.douyucdn.cn/api/v1/getVerticalRoom?limit=4&offset=0&time=1504247848
         //2.颜值数据
         dispatchG.enter()
         NetworkTools.requestDataLP(type: .GET, urlString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: parametersStr) { (result) in
@@ -62,7 +65,7 @@ class RecommendViewModel: NSObject
             
             
             self.prottyData.tag_name = "颜值"
-            self.prottyData.icon_name = "columnYanzhiIcon"
+            self.prottyData.small_icon_url = "columnYanzhiIcon"
             
             for dic in dataArr
             {
@@ -80,6 +83,7 @@ class RecommendViewModel: NSObject
         
         
         //3.游戏数据(后面部分)
+        //http://capi.douyucdn.cn/api/v1/getHotCate?limit=4&offset=0&time=1504247848
         dispatchG.enter()
         NetworkTools.requestDataLP(type: .GET, urlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parametersStr) { (response) in
             
@@ -98,18 +102,18 @@ class RecommendViewModel: NSObject
             }
             
             
-            for oup in self.groupArray
-            {
-                
-                for dataM in oup.roomModelArray
-                {
-                    //print(dataM.nickname)
-                    
-                }
-                
-                //print("==================== \(oup.tag_name)")
-                
-            }
+//            for oup in self.groupArray
+//            {
+//                
+//                for dataM in oup.roomModelArray
+//                {
+//                    //print(dataM.nickname)
+//                    
+//                }
+//                
+//                //print("==================== \(oup.tag_name)")
+//                
+//            }
             
             dispatchG.leave()
             print("2-12组")
@@ -119,10 +123,11 @@ class RecommendViewModel: NSObject
         
         dispatchG.notify(queue: DispatchQueue.main) { 
             
-            print("请求了所有数据")
+            print("请求了所有推荐显示数据")
             self.groupArray.insert(self.prottyData, at: 0)
             self.groupArray.insert(self.recommendData, at: 0)
             
+                
             callBack()
             
         }
@@ -130,3 +135,38 @@ class RecommendViewModel: NSObject
     }
     
 }
+
+
+extension RecommendViewModel
+{
+    
+    func requestCycleData(callBack:@escaping ()->())
+    {
+        
+        NetworkTools.requestDataLP(type: .GET, urlString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version":"2.540"]) { (result) in
+            
+            
+            guard let resultDic = result as? [String:NSObject] else {return}
+            
+            guard let dataArr = resultDic["data"] as? [[String:NSObject]] else {return}
+            
+            
+            for dic in dataArr
+            {
+                
+                self.cycleModels.append(CycleModel.init(dic: dic))
+                
+            }
+            
+            
+            callBack()
+            
+        }
+        
+        
+    }
+    
+    
+}
+
+

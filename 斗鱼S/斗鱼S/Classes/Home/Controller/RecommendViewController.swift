@@ -16,6 +16,8 @@ let kNormalCellID = "NormalCell"
 let kPrettyCellID = "kPrettyCellID"
 let kHeaderViewH: CGFloat = 50
 let kHeaderID = "kHeaderID"
+let kCycleViewH = kScreenWidth * 3/8
+let kGameViewH:CGFloat = 90
 
 class RecommendViewController: UIViewController
 {
@@ -42,6 +44,24 @@ class RecommendViewController: UIViewController
         
     }()
     
+    lazy var cycleView:RecommendCycleView = {
+        
+        let cycle = RecommendCycleView.getRecommendCycleView()
+        
+        cycle.frame = CGRect.init(x: 0, y: -(kCycleViewH + kGameViewH), width: kScreenWidth, height: kCycleViewH)
+        
+        return cycle
+        
+    }()
+    
+    lazy var recommendGameV:RecommendGameView = {
+        
+        let recommGame = RecommendGameView.getRecommendGameView()
+        recommGame.frame = CGRect.init(x: 0, y: -kGameViewH, width: kScreenWidth, height: kGameViewH)
+        
+        return recommGame
+        
+    }()
     
     //MARK:-系统回调函数
     override func viewDidLoad()
@@ -85,10 +105,23 @@ extension RecommendViewController
     func loadData()
     {
      
-        recommendVM.requestData { 
+        recommendVM.requestData {
             
             self.collectionView.reloadData()
+            
+            self.recommendGameV.anchorGroups = self.recommendVM.groupArray
+            
         }
+        
+        
+        recommendVM.requestCycleData { 
+            
+            
+            self.cycleView.cycleDatas = self.recommendVM.cycleModels
+            
+        }
+        
+        
     }
     
     
@@ -102,6 +135,12 @@ extension RecommendViewController
     {
         
         view.addSubview(collectionView)
+        
+        collectionView.addSubview(cycleView)
+        collectionView.addSubview(recommendGameV)
+        
+        //设置collectionView的内边距 显示出滚动视图
+        collectionView.contentInset = UIEdgeInsets.init(top: kCycleViewH + kGameViewH, left: 0, bottom: 0, right: 0)
         
     }
     
@@ -131,20 +170,28 @@ extension RecommendViewController: UICollectionViewDataSource, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         
-        var cell: UICollectionViewCell!
+        let group = recommendVM.groupArray[indexPath.section]
+        let cellData = group.roomModelArray[indexPath.item]
+        
         
         if indexPath.section == 1
         {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath)
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPrettyCellID, for: indexPath) as! PrettyCollectionViewCell
+            
+            cell.roomModel = cellData
+            
+            return cell
         }
         else
         {
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as! NormalCollectionViewCell
+            
+            cell.roomModel = cellData
+            
+            return cell
         }
         
     
-        return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView

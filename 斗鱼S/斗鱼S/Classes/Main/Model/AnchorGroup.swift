@@ -29,6 +29,9 @@ class AnchorGroup: NSObject
     
     var tag_name: String = ""
     var icon_name: String = "discovery_hotVideo"
+    var icon_url : String = ""
+    var small_icon_url : String = ""
+    
     lazy var roomModelArray:[RoomModel] = [RoomModel]()
     
     override init() {

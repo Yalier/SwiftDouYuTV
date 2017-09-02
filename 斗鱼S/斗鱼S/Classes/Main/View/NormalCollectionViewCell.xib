@@ -36,6 +36,12 @@
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_group_icon" translatesAutoresizingMaskIntoConstraints="NO" id="ipe-5j-pNX">
                         <rect key="frame" x="0.0" y="0.0" width="435" height="317"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="哈哈哈哈哈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRG-Dw-yza">
                         <rect key="frame" x="5" y="298.5" width="56.5" height="13.5"/>
@@ -67,6 +73,12 @@
                 <constraint firstItem="ipe-5j-pNX" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="zd7-af-93V"/>
             </constraints>
             <size key="customSize" width="435" height="349"/>
+            <connections>
+                <outlet property="iconImageV" destination="ipe-5j-pNX" id="aY8-Bh-6cq"/>
+                <outlet property="nickName" destination="MRG-Dw-yza" id="XDc-ga-7DG"/>
+                <outlet property="onLineBtn" destination="JHw-bc-Dsb" id="3sS-ws-cVa"/>
+                <outlet property="roomName" destination="qHa-30-wXS" id="79j-OW-kl5"/>
+            </connections>
             <point key="canvasLocation" x="35.5" y="69.5"/>
         </collectionViewCell>
     </objects>

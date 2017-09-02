@@ -8,6 +8,7 @@ target '斗鱼S' do
   # Pods for 斗鱼S
 
 pod 'Alamofire'
+pod 'Kingfisher'
 
 
 
