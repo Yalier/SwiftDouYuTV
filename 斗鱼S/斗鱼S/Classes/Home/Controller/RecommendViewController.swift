@@ -114,7 +114,7 @@ extension RecommendViewController
         }
         
         
-        recommendVM.requestCycleData { 
+        recommendVM.requestCycleData {
             
             
             self.cycleView.cycleDatas = self.recommendVM.cycleModels
