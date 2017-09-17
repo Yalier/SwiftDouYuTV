@@ -29,7 +29,7 @@ class CycleCollectionViewCell: UICollectionViewCell {
             
             guard let url = URL.init(string: cycleM?.pic_url ?? "") else {return}
             let imageRes = ImageResource.init(downloadURL: url)
-            iconIV.kf_setImage(with: imageRes, placeholder: UIImage.init(named: "default_group_icon"), options: nil, progressBlock: nil, completionHandler: nil)
+            iconIV.kf.setImage(with: imageRes, placeholder: UIImage.init(named: "default_group_icon"), options: nil, progressBlock: nil, completionHandler: nil)
             
             
         }

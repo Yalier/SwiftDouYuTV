@@ -1,37 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GameCollectionViewCell" customModule="斗鱼S" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+        <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GameCollectionViewCell" customModule="斗鱼S" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="102" height="94"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                <rect key="frame" x="0.0" y="0.0" width="102" height="94"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="英雄联盟" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vO-HE-eAv">
-                        <rect key="frame" x="17.5" y="66.5" width="45" height="13.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="13.5" id="s9x-Dd-1JP"/>
-                        </constraints>
+                        <rect key="frame" x="28.5" y="67.5" width="45" height="13.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nDk-VK-rqA">
-                        <rect key="frame" x="17" y="15" width="46.5" height="46.5"/>
+                        <rect key="frame" x="28" y="16" width="46.5" height="46.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="nDk-VK-rqA" secondAttribute="height" multiplier="1:1" id="5kb-Tb-oqO"/>
+                            <constraint firstAttribute="width" constant="46.5" id="bwG-nc-WKb"/>
+                            <constraint firstAttribute="height" constant="46.5" id="ewq-by-ZIv"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -40,21 +36,30 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
+                    <view clipsSubviews="YES" alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="isu-sj-bfY">
+                        <rect key="frame" x="0.0" y="94" width="102" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="xCV-Al-oDk"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="4vO-HE-eAv" secondAttribute="bottom" constant="10" id="Qk9-kH-x8f"/>
-                <constraint firstItem="4vO-HE-eAv" firstAttribute="top" secondItem="nDk-VK-rqA" secondAttribute="bottom" constant="5" id="Xr7-6s-Hhh"/>
-                <constraint firstItem="4vO-HE-eAv" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="c1q-Pd-G8s"/>
-                <constraint firstItem="nDk-VK-rqA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="kEy-Cs-gl6"/>
-                <constraint firstItem="nDk-VK-rqA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="xIY-Nr-8DK"/>
+                <constraint firstAttribute="trailing" secondItem="isu-sj-bfY" secondAttribute="trailing" id="304-Kd-0i4"/>
+                <constraint firstItem="nDk-VK-rqA" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" constant="-8" id="FHQ-wq-3qL"/>
+                <constraint firstAttribute="bottom" secondItem="isu-sj-bfY" secondAttribute="bottom" constant="-1" id="KPG-7P-JS5"/>
+                <constraint firstItem="nDk-VK-rqA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="bEQ-kR-BJ6"/>
+                <constraint firstItem="isu-sj-bfY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dwq-3A-7FC"/>
+                <constraint firstItem="4vO-HE-eAv" firstAttribute="top" secondItem="nDk-VK-rqA" secondAttribute="bottom" constant="5" id="k4E-Zi-tAZ"/>
+                <constraint firstItem="4vO-HE-eAv" firstAttribute="centerX" secondItem="nDk-VK-rqA" secondAttribute="centerX" id="rby-L7-9bs"/>
             </constraints>
-            <size key="customSize" width="216" height="158"/>
+            <size key="customSize" width="238" height="162"/>
             <connections>
                 <outlet property="myIcon" destination="nDk-VK-rqA" id="yS7-r5-fNy"/>
                 <outlet property="myTitleLabel" destination="4vO-HE-eAv" id="nJm-J5-drq"/>
             </connections>
-            <point key="canvasLocation" x="-87" y="-4"/>
+            <point key="canvasLocation" x="-76" y="-2"/>
         </collectionViewCell>
     </objects>
 </document>

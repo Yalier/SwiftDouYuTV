@@ -9,11 +9,12 @@
 import UIKit
 import Kingfisher
 
-class HeaderCollectionReusableView: UICollectionReusableView {
+class HeaderCollectionReusableView: UICollectionReusableView
+{
     
     @IBOutlet weak var iconIV: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    
+    @IBOutlet weak var moreBtn: UIButton!
     
     var group : AnchorGroup?
     {
@@ -57,5 +58,20 @@ class HeaderCollectionReusableView: UICollectionReusableView {
         super.awakeFromNib()
         
     }
+    
+}
+
+
+
+extension HeaderCollectionReusableView
+{
+    
+    class func getHeaderView() -> HeaderCollectionReusableView
+    {
+        
+        return Bundle.main.loadNibNamed("HeaderCollectionReusableView", owner: nil, options: nil)?.first as! HeaderCollectionReusableView
+        
+    }
+    
     
 }

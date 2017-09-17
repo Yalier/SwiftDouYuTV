@@ -102,7 +102,7 @@ extension PageTitleView
         
         myScrollView.addSubview(scrollLine)
         
-        //验证是否存在
+        //验证是否存在 取出第一个label
         guard let scrollL = labels.first else
         {
             return
@@ -135,7 +135,7 @@ extension PageTitleView
             myLabel.font = UIFont.systemFont(ofSize: 16.0)
             myLabel.textAlignment = NSTextAlignment.center
             
-            
+            //label的x坐标
             let labelX: CGFloat = labelW * CGFloat(index)
            
             myLabel.frame = CGRect.init(x: labelX, y: labelY, width: labelW, height: labelH)

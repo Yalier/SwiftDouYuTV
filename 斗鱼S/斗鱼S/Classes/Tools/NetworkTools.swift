@@ -11,8 +11,8 @@ import Alamofire
 
 enum typeMothed
 {
-    case GET
-    case POST
+    case get
+    case post
 }
 
 
@@ -20,11 +20,11 @@ class NetworkTools: NSObject
 {
     
     
-    class func requestDataLP(type: typeMothed, urlString: String, parameters: [String:String]? = nil, finishedBack: @escaping (_ result:AnyObject) -> ())
+    class func requestDataLP(_ type: typeMothed, urlString: String, parameters: [String:String]? = nil, finishedBack: @escaping (_ result:AnyObject) -> ())
     {
         
         
-       let mothed = type == typeMothed.GET ? HTTPMethod.get : HTTPMethod.post
+       let mothed = type == typeMothed.get ? HTTPMethod.get : HTTPMethod.post
   
     
         Alamofire.request(urlString, method: mothed, parameters: parameters, encoding: URLEncoding.default, headers: nil).responseJSON { (response) in

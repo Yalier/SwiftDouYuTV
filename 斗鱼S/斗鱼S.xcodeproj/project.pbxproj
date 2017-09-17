@@ -44,6 +44,9 @@
 		0E9C43471F4D694500D83A2C /* PrettyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E9C43451F4D694500D83A2C /* PrettyCollectionViewCell.xib */; };
 		0EE0E0CD1F57E5210023837B /* CycleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE0E0CB1F57E5210023837B /* CycleCollectionViewCell.swift */; };
 		0EE0E0CE1F57E5210023837B /* CycleCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0EE0E0CC1F57E5210023837B /* CycleCollectionViewCell.xib */; };
+		0EE9B9371F62761A00ECEE60 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE9B9361F62761A00ECEE60 /* GameViewController.swift */; };
+		0EE9B9391F62843800ECEE60 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE9B9381F62843800ECEE60 /* GameViewModel.swift */; };
+		0EE9B93B1F62872700ECEE60 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE9B93A1F62872700ECEE60 /* GameModel.swift */; };
 		D45924DB1DA125DB5875FD95 /* Pods___S.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95EE7025C889F21B6440348A /* Pods___S.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +90,9 @@
 		0E9C43451F4D694500D83A2C /* PrettyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrettyCollectionViewCell.xib; sourceTree = "<group>"; };
 		0EE0E0CB1F57E5210023837B /* CycleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleCollectionViewCell.swift; sourceTree = "<group>"; };
 		0EE0E0CC1F57E5210023837B /* CycleCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CycleCollectionViewCell.xib; sourceTree = "<group>"; };
+		0EE9B9361F62761A00ECEE60 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		0EE9B9381F62843800ECEE60 /* GameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		0EE9B93A1F62872700ECEE60 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		95EE7025C889F21B6440348A /* Pods___S.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___S.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C2DEC6CC081975CC5E309E5 /* Pods-斗鱼S.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-斗鱼S.debug.xcconfig"; path = "Pods/Target Support Files/Pods-斗鱼S/Pods-斗鱼S.debug.xcconfig"; sourceTree = "<group>"; };
 		E7E779BCC02DF3270A7E720C /* Pods-斗鱼S.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-斗鱼S.release.xcconfig"; path = "Pods/Target Support Files/Pods-斗鱼S/Pods-斗鱼S.release.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				0E2F269F1F50130D003E03EC /* RecommendViewModel.swift */,
+				0EE9B9381F62843800ECEE60 /* GameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,6 +232,7 @@
 			children = (
 				0E5409BA1F453C17006611A9 /* HomeViewController.swift */,
 				0E9C433A1F4D237100D83A2C /* RecommendViewController.swift */,
+				0EE9B9361F62761A00ECEE60 /* GameViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				0E2BB8D41F56B66700E37662 /* CycleModel.swift */,
+				0EE9B93A1F62872700ECEE60 /* GameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -451,12 +460,15 @@
 				0E53C3F51F5554B800A58A21 /* RecommendCycleView.swift in Sources */,
 				0E9C43461F4D694500D83A2C /* PrettyCollectionViewCell.swift in Sources */,
 				0E2F26A61F502869003E03EC /* RoomModel.swift in Sources */,
+				0EE9B9391F62843800ECEE60 /* GameViewModel.swift in Sources */,
 				0E3E56691F42E39600C2E88B /* AppDelegate.swift in Sources */,
+				0EE9B9371F62761A00ECEE60 /* GameViewController.swift in Sources */,
 				0E5437151F4A8B21001C619C /* UIColor-Extension.swift in Sources */,
 				0E9C433B1F4D237100D83A2C /* RecommendViewController.swift in Sources */,
 				0E2F26A41F502198003E03EC /* AnchorGroup.swift in Sources */,
 				0E5409B91F453B94006611A9 /* MainViewController.swift in Sources */,
 				0E2BB8D51F56B66700E37662 /* CycleModel.swift in Sources */,
+				0EE9B93B1F62872700ECEE60 /* GameModel.swift in Sources */,
 				0E5409C01F456CD3006611A9 /* PageTitleView.swift in Sources */,
 				0E2F26A21F50193A003E03EC /* NSDateExtension.swift in Sources */,
 				0E5437111F4A82EA001C619C /* PageContentView.swift in Sources */,
@@ -619,7 +631,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = V9KQJBLZ9J;
 				INFOPLIST_FILE = "斗鱼S/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lp.--S";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -637,7 +649,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = V9KQJBLZ9J;
 				INFOPLIST_FILE = "斗鱼S/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "lp.--S";
 				PRODUCT_NAME = "$(TARGET_NAME)";

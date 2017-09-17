@@ -18,16 +18,16 @@ class RecommendViewModel: NSObject
     
     
     //请求首页推荐数据
-    func requestData(callBack:@escaping () -> ())
+    func requestData(_ callBack:@escaping () -> ())
     {
       
-        let parametersStr = ["limit":"4", "offset":"0", "time":NSDate.getCurrentTime()]
+        let parametersStr = ["limit":"4", "offset":"0", "time":Date.getCurrentTime()]
         
         let dispatchG = DispatchGroup()
         
         //1.推荐数据
         dispatchG.enter()
-        NetworkTools.requestDataLP(type: .GET, urlString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time":NSDate.getCurrentTime()]) { (result) in
+        NetworkTools.requestDataLP(.get, urlString: "http://capi.douyucdn.cn/api/v1/getbigDataRoom", parameters: ["time":Date.getCurrentTime()]) { (result) in
             
             guard let responseDic = result as? [String:NSObject] else {return}
             
@@ -57,7 +57,7 @@ class RecommendViewModel: NSObject
       //http://capi.douyucdn.cn/api/v1/getVerticalRoom?limit=4&offset=0&time=1504247848
         //2.颜值数据
         dispatchG.enter()
-        NetworkTools.requestDataLP(type: .GET, urlString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: parametersStr) { (result) in
+        NetworkTools.requestDataLP(.get, urlString: "http://capi.douyucdn.cn/api/v1/getVerticalRoom", parameters: parametersStr) { (result) in
             
             guard let responseDic = result as? [String:NSObject] else {return}
             
@@ -85,7 +85,7 @@ class RecommendViewModel: NSObject
         //3.游戏数据(后面部分)
         //http://capi.douyucdn.cn/api/v1/getHotCate?limit=4&offset=0&time=1504247848
         dispatchG.enter()
-        NetworkTools.requestDataLP(type: .GET, urlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parametersStr) { (response) in
+        NetworkTools.requestDataLP(.get, urlString: "http://capi.douyucdn.cn/api/v1/getHotCate", parameters: parametersStr) { (response) in
             
     
             guard let responseDic = response as? [String:NSObject] else {return}
@@ -140,10 +140,10 @@ class RecommendViewModel: NSObject
 extension RecommendViewModel
 {
     
-    func requestCycleData(callBack:@escaping ()->())
+    func requestCycleData(_ callBack:@escaping ()->())
     {
         
-        NetworkTools.requestDataLP(type: .GET, urlString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version":"2.540"]) { (result) in
+        NetworkTools.requestDataLP(.get, urlString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version":"2.540"]) { (result) in
             
             
             guard let resultDic = result as? [String:NSObject] else {return}

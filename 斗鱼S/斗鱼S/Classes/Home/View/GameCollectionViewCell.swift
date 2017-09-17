@@ -38,6 +38,31 @@ class GameCollectionViewCell: UICollectionViewCell {
     }
     
     
+    var myGameModel : GameModel?
+    {
+        
+        didSet
+        {
+            
+            myTitleLabel.text = myGameModel?.tag_name
+            
+            if myGameModel?.icon_url == ""
+            {
+                myIcon.image = UIImage.init(named: "default_group_icon")
+            }
+            else
+            {
+                
+                let url = URL.init(string: myGameModel?.icon_url ?? "")
+                myIcon.kf.setImage(with: url)
+                
+            }
+            
+        }
+        
+    }
+    
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()

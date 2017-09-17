@@ -38,7 +38,8 @@ class HomeViewController: UIViewController
         
         //添加推荐子控制器
         myChildVcs.append(RecommendViewController())
-        for _ in 0..<3
+        myChildVcs.append(GameViewController())
+        for _ in 0..<2
         {
             
             let vc = UIViewController()
@@ -100,7 +101,7 @@ extension HomeViewController
     func setUpNaviBar()
     {
         
-        
+        //左边标志按钮(斗鱼标志图片)
         navigationItem.leftBarButtonItem = UIBarButtonItem.init(imageName: "logo")
         
 
@@ -126,7 +127,8 @@ extension HomeViewController
 extension HomeViewController: pageTitleViewDelegate
 {
     
-    func pageTitleView(_ titleView: PageTitleView, selected index: Int) {
+    func pageTitleView(_ titleView: PageTitleView, selected index: Int)
+    {
         
         pageContenViewL.setCurrIndex(index)
         

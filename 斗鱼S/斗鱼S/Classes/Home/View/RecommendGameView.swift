@@ -18,11 +18,15 @@ class RecommendGameView: UIView
     
     @IBOutlet weak var myCollection: UICollectionView!
     
+    var isAnchorGroup : Bool = true
+    
     //数据源数组
     var anchorGroups : [AnchorGroup]?
     {
         didSet
         {
+            
+            isAnchorGroup = true
             
             //移除前两个数据
             anchorGroups?.removeFirst()
@@ -41,6 +45,23 @@ class RecommendGameView: UIView
     }
     
     
+    
+    var gameModes : [GameModel]?
+    {
+        
+        didSet
+        {
+            
+            isAnchorGroup = false
+            
+            myCollection.reloadData()
+            
+        }
+        
+        
+    }
+    
+    
     override func awakeFromNib()
     {
         
@@ -48,6 +69,7 @@ class RecommendGameView: UIView
         
         myCollection.register(UINib.init(nibName: "GameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: gameCellStr)
         
+        //设置内边距
         myCollection.contentInset = UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10)
         
     }
@@ -97,7 +119,22 @@ extension RecommendGameView:UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return anchorGroups?.count ?? 0
+        
+        
+        if isAnchorGroup == true
+        {
+            
+            return anchorGroups?.count ?? 0
+            
+        }
+        else
+        {
+            
+            return gameModes?.count ?? 0
+            
+        }
+        
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
@@ -105,8 +142,17 @@ extension RecommendGameView:UICollectionViewDataSource
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: gameCellStr, for: indexPath) as! GameCollectionViewCell
         
-        let data = anchorGroups?[indexPath.item]
-        cell.myGroup = data
+        
+        if isAnchorGroup == true
+        {
+            cell.myGroup = anchorGroups?[indexPath.item]
+        }
+        else
+        {
+            
+            cell.myGameModel = gameModes?[indexPath.item]
+            
+        }
         
         
         return cell
