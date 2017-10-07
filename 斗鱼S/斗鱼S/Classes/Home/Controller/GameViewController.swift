@@ -11,20 +11,19 @@ import UIKit
 private let CellSTR = "CellStr"
 private let HeaderID = "headerStr"
 
-class GameViewController: UIViewController
+class GameViewController: HomeBaseViewController
 {
 
     
     lazy var gameVM : GameViewModel = GameViewModel()
     
-    lazy var topView :HeaderCollectionReusableView = {
+    lazy var topView :GameViewVCTopView = {
         
-        let headerV = HeaderCollectionReusableView.getHeaderView()
+        let headerV = GameViewVCTopView.getGameTopView()
         
         headerV.frame = CGRect.init(x: 0, y: -(50 + 90), width: kScreenWidth, height: 50)
-        headerV.iconIV.image = UIImage.init(named: "101010")
-        headerV.titleLabel.text = "常用"
-        headerV.moreBtn.isHidden = true
+        headerV.IV.image = UIImage.init(named: "101010")
+        headerV.myTitleLabel.text = "常用"
         
         return headerV
         
@@ -55,6 +54,7 @@ class GameViewController: UIViewController
         
         let collec = UICollectionView.init(frame: (self?.view.bounds)!, collectionViewLayout: layout)
         collec.dataSource = self
+        collec.delegate = self
         collec.backgroundColor = UIColor.white
         collec.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
@@ -64,10 +64,13 @@ class GameViewController: UIViewController
     
     override func viewDidLoad()
     {
-        super.viewDidLoad()
+        
+        contentView = myGameCollectionView
         
         //布局
         setupUI()
+        
+        super.viewDidLoad()
         
         //网络请求
         loadGameData()
@@ -76,7 +79,7 @@ class GameViewController: UIViewController
         myGameCollectionView.register(UINib.init(nibName: "GameCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: CellSTR)
         
         //注册headerID
-        myGameCollectionView.register(UINib.init(nibName: "HeaderCollectionReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: HeaderID)
+        myGameCollectionView.register(UINib.init(nibName: "GameViewVCTopView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: HeaderID)
     
     }
 
@@ -111,16 +114,28 @@ extension GameViewController : UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
     {
         
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderID, for: indexPath) as! GameViewVCTopView
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: HeaderID, for: indexPath) as! HeaderCollectionReusableView
-        
-        headerView.titleLabel.text = "全部"
-        headerView.iconIV.image = UIImage.init(named: "101010")
-        //隐藏更多按钮
-        headerView.moreBtn.isHidden = true
+        headerView.myTitleLabel.text = "全部"
+        headerView.IV.image = UIImage.init(named: "101010")
+
         
         return headerView
+        
+    }
     
+}
+
+
+//UICollectionViewDelegate
+extension GameViewController : UICollectionViewDelegate
+{
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        
+        print(indexPath.section, indexPath.item)
+        
     }
     
 }
@@ -175,9 +190,9 @@ extension GameViewController
             
             self.recommendV.gameModes = Array(self.gameVM.gameArr[0..<10])
             
+            self.amationFinish()
             
         }
-        
         
     }
     

@@ -14,7 +14,7 @@ class PrettyCollectionViewCell: BaseCollectionViewCell {
     
     @IBOutlet weak var CityButton: UIButton!
     
-    
+    //重写父类的属性
     override var roomModel : RoomModel?
     {
         didSet

@@ -63,6 +63,34 @@ class GameCollectionViewCell: UICollectionViewCell {
     }
     
     
+    var amuseModelTop : AmuseModel?
+    {
+        
+        didSet
+        {
+            
+            myTitleLabel.text = amuseModelTop?.tag_name
+            
+            if amuseModelTop?.icon_url == ""
+            {
+                myIcon.image = UIImage.init(named: "default_group_icon")
+                return
+            }
+            
+            guard let urlStr = amuseModelTop?.icon_url else
+            {
+                return
+            }
+            
+            let url = URL.init(string: urlStr)
+            myIcon.kf.setImage(with: url)
+            
+    
+        }
+        
+    }
+    
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()

@@ -51,6 +51,44 @@ class HeaderCollectionReusableView: UICollectionReusableView
     }
     
     
+    var amuseModel : AmuseModel?
+    {
+        
+        didSet
+        {
+            
+            //iconIV.image = UIImage.init(named: group?.icon_name ?? "discovery_wolfmanKill")
+            titleLabel.text = amuseModel?.tag_name
+            
+            if amuseModel?.icon_url == "columnHotIcon" || amuseModel?.icon_url == "columnYanzhiIcon"
+            {
+                
+                iconIV.image = UIImage.init(named: (amuseModel?.icon_url)!)
+                return
+                
+            }
+            
+            
+            if amuseModel?.icon_url == ""
+            {
+                
+                iconIV.image = UIImage.init(named: "discovery_wolfmanKill")
+                return
+                
+            }
+            
+            guard let myUrl = URL.init(string: (amuseModel?.icon_url)!) else {return}
+            let imageRes : ImageResource = ImageResource.init(downloadURL: myUrl)
+            iconIV.kf.setImage(with: imageRes)
+            
+            
+        }
+
+        
+        
+    }
+    
+    
     
     override func awakeFromNib()
     {

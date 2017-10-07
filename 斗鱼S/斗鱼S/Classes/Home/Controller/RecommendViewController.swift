@@ -19,7 +19,7 @@ let kHeaderID = "kHeaderID"
 let kCycleViewH = kScreenWidth * 3/8
 let kGameViewH:CGFloat = 90
 
-class RecommendViewController: UIViewController
+class RecommendViewController: HomeBaseViewController
 {
 
     
@@ -66,13 +66,15 @@ class RecommendViewController: UIViewController
     //MARK:-系统回调函数
     override func viewDidLoad()
     {
-        super.viewDidLoad()
         
-        view.backgroundColor = UIColor.cyan
+        //view.backgroundColor = UIColor.cyan
+        
+        contentView = collectionView
         
         //添加子控件
         setUPUI()
         
+        super.viewDidLoad()
         
         //网络请求
         loadData()
@@ -111,6 +113,8 @@ extension RecommendViewController
             
             self.recommendGameV.anchorGroups = self.recommendVM.groupArray
             
+            self.amationFinish()
+            
         }
         
         
@@ -120,6 +124,7 @@ extension RecommendViewController
             self.cycleView.cycleDatas = self.recommendVM.cycleModels
             
         }
+        
         
         
     }
@@ -147,7 +152,7 @@ extension RecommendViewController
 }
 
 //MARK:- UICollectionView数据源协议
-extension RecommendViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
+extension RecommendViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate
 {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int
@@ -220,6 +225,33 @@ extension RecommendViewController: UICollectionViewDataSource, UICollectionViewD
             return CGSize.init(width: kItemW, height: kNormalItemH)
         }
         
+        
+    }
+    
+    
+    //点击item事件
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    {
+        
+        let group = recommendVM.groupArray[indexPath.section]
+        let cellData = group.roomModelArray[indexPath.item]
+        
+        cellData.isVertical == 0 ? presentNormalRoom() : presentShowRoom()
+        
+    }
+    
+    
+    func presentNormalRoom()
+    {
+        
+       navigationController?.pushViewController(NormalRoomViewController(), animated: true)
+        
+    }
+    
+    func presentShowRoom()
+    {
+        
+         present(ShowRoomViewController(), animated: true, completion: nil)
         
     }
     

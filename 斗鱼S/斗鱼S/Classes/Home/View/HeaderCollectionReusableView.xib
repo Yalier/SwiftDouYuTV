@@ -25,6 +25,7 @@
                     <rect key="frame" x="10" y="22" width="20" height="18"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="18" id="KzX-ug-51y"/>
+                        <constraint firstAttribute="width" constant="20" id="stQ-Mx-m6R"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="颜值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ei-jb-pod">
@@ -61,7 +62,7 @@
                 <outlet property="moreBtn" destination="mot-PL-HF3" id="C5O-Yh-yJl"/>
                 <outlet property="titleLabel" destination="7Ei-jb-pod" id="g9c-jx-nZ8"/>
             </connections>
-            <point key="canvasLocation" x="-41" y="5"/>
+            <point key="canvasLocation" x="-155" y="-65"/>
         </collectionReusableView>
     </objects>
     <resources>

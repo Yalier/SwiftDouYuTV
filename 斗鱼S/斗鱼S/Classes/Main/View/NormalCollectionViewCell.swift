@@ -51,6 +51,74 @@ class NormalCollectionViewCell: UICollectionViewCell {
     }
     
     
+    var AmuseListModel : AmuseRoomListModel?
+    {
+        
+        didSet
+        {
+            
+            var onLineStr : String = ""
+            guard let norRoom = AmuseListModel else {return}
+            
+            if norRoom.online >= 10000
+            {
+                onLineStr = "\(Int(norRoom.online/10000))万在线"
+            }
+            else
+            {
+                onLineStr = "\(norRoom.online)在线"
+            }
+            
+            onLineBtn.setTitle(onLineStr, for: .normal)
+            nickName.text = norRoom.nickname
+            
+            guard let url = URL.init(string: norRoom.vertical_src) else {return}
+            let imageR : ImageResource = ImageResource.init(downloadURL: url)
+            
+            iconImageV.kf.setImage(with: imageR, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            
+            roomName.text = norRoom.room_name
+
+            
+            
+        }
+        
+        
+    }
+    
+    
+    var funnyModel : FunnyModel?
+    {
+        
+        didSet
+        {
+            
+            var onLineStr : String = ""
+            guard let norRoom = funnyModel else {return}
+            
+            if norRoom.online >= 10000
+            {
+                onLineStr = "\(Int(norRoom.online/10000))万在线"
+            }
+            else
+            {
+                onLineStr = "\(norRoom.online)在线"
+            }
+            
+            onLineBtn.setTitle(onLineStr, for: .normal)
+            nickName.text = norRoom.nickname
+            
+            guard let url = URL.init(string: norRoom.vertical_src) else {return}
+            let imageR : ImageResource = ImageResource.init(downloadURL: url)
+            
+            iconImageV.kf.setImage(with: imageR, placeholder: nil, options: nil, progressBlock: nil, completionHandler: nil)
+            
+            roomName.text = norRoom.room_name
+            
+        }
+        
+    }
+    
     
     
     override func awakeFromNib()

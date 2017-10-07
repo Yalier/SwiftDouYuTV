@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GameViewVCTopView" customModule="斗鱼S" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="387" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="常用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKc-V7-RbR">
+                    <rect key="frame" x="30" y="18" width="31" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="ImF-fT-OVA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8YS-0M-XOL">
+                    <rect key="frame" x="0.0" y="0.0" width="387" height="10"/>
+                    <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="0.15506712147887325" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="10" id="RL3-ej-1wH"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HAW-v0-sAC">
+                    <rect key="frame" x="10" y="18" width="10" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="10" id="EfL-K7-ITK"/>
+                        <constraint firstAttribute="height" constant="20" id="eyB-uH-5mC"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="5" id="oDb-a2-QQ8"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="HAW-v0-sAC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="0rZ-ht-rOH"/>
+                <constraint firstItem="VKc-V7-RbR" firstAttribute="leading" secondItem="HAW-v0-sAC" secondAttribute="trailing" constant="10" id="EoZ-up-Jxa"/>
+                <constraint firstItem="HAW-v0-sAC" firstAttribute="top" secondItem="8YS-0M-XOL" secondAttribute="bottom" constant="8" id="Kfw-ec-ZT2"/>
+                <constraint firstItem="8YS-0M-XOL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Sm3-Kq-PPK"/>
+                <constraint firstAttribute="trailing" secondItem="8YS-0M-XOL" secondAttribute="trailing" id="hv9-d6-SX4"/>
+                <constraint firstItem="VKc-V7-RbR" firstAttribute="centerY" secondItem="HAW-v0-sAC" secondAttribute="centerY" id="jKb-WP-cAa"/>
+                <constraint firstItem="8YS-0M-XOL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rzh-6L-kPn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="IV" destination="HAW-v0-sAC" id="eKO-Ws-zoX"/>
+                <outlet property="myTitleLabel" destination="VKc-V7-RbR" id="e7e-av-c0e"/>
+            </connections>
+            <point key="canvasLocation" x="195" y="-79"/>
+        </view>
+    </objects>
+</document>

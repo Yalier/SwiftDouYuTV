@@ -9,7 +9,8 @@
 import UIKit
 import Kingfisher
 
-class BaseCollectionViewCell: UICollectionViewCell {
+class BaseCollectionViewCell: UICollectionViewCell
+{
     
     
     @IBOutlet weak var iconImageV: UIImageView!
